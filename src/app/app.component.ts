@@ -12,6 +12,7 @@ import { timer } from 'rxjs';
 })
 export class AppComponent {
 
+  // Variable to display splash screen
   showSplash = true;
 
   constructor(
@@ -27,7 +28,7 @@ export class AppComponent {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
 
-      timer(2000).subscribe( () => this.showSplash=false);
+      timer(3000).subscribe( () => this.showSplash=false);
     });
   }
 }

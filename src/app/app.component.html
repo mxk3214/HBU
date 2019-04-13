@@ -8,3 +8,24 @@
 <ion-app>
   <ion-router-outlet></ion-router-outlet>
 </ion-app>
+
+
+
+<!-- Menu for all pages -->
+<ion-fab vertical="bottom" horizontal="center" slot="fixed">
+  <ion-fab-button color="dark">
+    <ion-icon name="add-circle-outline"></ion-icon>
+  </ion-fab-button>
+  <ion-fab-list side="top">
+    <ion-fab-button [routerDirection]="camera"><ion-icon name="camera"></ion-icon></ion-fab-button>
+  </ion-fab-list>
+  <ion-fab-list side="start">
+    <ion-fab-button [routerDirection]="home"><ion-icon ios="ios-chatbubbles" md="md-chatbubbles"></ion-icon></ion-fab-button>
+    <ion-fab-button [routerDirection]="home"><ion-icon name="home"></ion-icon></ion-fab-button>
+  </ion-fab-list>
+  <ion-fab-list side="end">
+    <ion-fab-button [routerDirection]="settings"><ion-icon name="settings"></ion-icon></ion-fab-button>
+  </ion-fab-list>
+</ion-fab>
+
+
