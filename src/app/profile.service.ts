@@ -15,7 +15,12 @@ export class ProfileService {
   
   // Constructor
   constructor(private http: HttpClient) { 
-    this.profiles = this.http.get(this.httpUrl);
+    // this.profiles = this.http.get(this.httpUrl);
+  }
+
+  ngOnInit(){
+    let allData = this.http.get(this.httpUrl);
+    console.log(allData);
   }
 
   // Get Profiles Method
