@@ -7,19 +7,36 @@
 </ion-header>
 
 
+<!-- Card template - TEMP -->
 <ion-content>
   <ion-card>
     <ion-card-header>
-      <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-      <ion-card-title>Card Title</ion-card-title>
+      <ion-segment>
+          <ion-label>Friends</ion-label>
+      </ion-segment>
     </ion-card-header>
 
     <ion-card-content>
       Keep close to Nature's heart... and break clear away, once in awhile,
       and climb a mountain or spend a week in the woods. Wash your spirit clean.
     </ion-card-content>
+
+    <ion-segment>
+      <div (click)="toggleHeart()">
+        <!--<ion-icon [name]="visible ? 'heart-outline' : 'heart'"></ion-icon>-->
+
+        <!-- Source: https://www.flaticon.com/free-icon/love_1029183#term=heart&page=1&position=9-->
+        <img src="../assets/emptyHeart.svg" *ngIf="visible" class="like-heart">
+        <!-- Source: https://www.flaticon.com/free-icon/like_149217#term=heart&page=1&position=2-->
+        <img src="../assets/filledHeart.svg" *ngIf="!visible" class="like-heart">
+      </div>
+    </ion-segment>
+
   </ion-card>
-</ion-content>
+</ion-content> 
+
+
+
 
 
 

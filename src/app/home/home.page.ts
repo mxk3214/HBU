@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  visible: boolean = true;
 
+  toggleHeart(): void {
+    this.visible = !this.visible;
+    console.log(this.visible);
+  }
 }
