@@ -1,11 +1,16 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>camera</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
-  <div>
-    yoooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+  <div id="container">
+    <p id="post-heading">Make a Post!</p>
+
+    <div id="camera-options">
+      <!-- Button 1 (Camera) -->
+      <ion-button class="main-theme-color" expand="full" size="large">
+          <ion-icon name="camera" slot="start"></ion-icon>Take a photo
+      </ion-button>
+      <!-- Button 2 (From photo library) -->
+      <ion-button class="main-theme-color" expand="full" size="large">
+          <ion-icon name="image" slot="start"></ion-icon>Choose from library
+      </ion-button>
+    </div>
   </div>
 </ion-content>

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { catchError, map } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 import { Profile } from './profile';
 import { HttpClient} from '@angular/common/http';
 
@@ -14,23 +14,16 @@ export class ProfileService {
   httpUrl: string = 'https://reqres.in/api/users';
   
   // Constructor
-  constructor(private http: HttpClient) { 
-    // this.profiles = this.http.get(this.httpUrl);
-  }
+  constructor(private http: HttpClient) { }
 
-  ngOnInit(){
-    let allData = this.http.get(this.httpUrl);
-    console.log(allData);
-  }
 
   // Get Profiles Method
-  getProfiles(): Observable<Profile[]>{
+  getProfiles(): Observable<any>{
     return this.http.get<any>(this.httpUrl).pipe(
-        catchError((err) => {
-          console.error(err);
-          return of({data: []});
-        }), 
-        map( res => res.data as Profile[])
+        map(results => {
+            console.log(results);
+        })
+        // map( result => result.data as Profile[] )
     );
   }
 }
