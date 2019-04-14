@@ -10,6 +10,5 @@ export class HomePage {
 
   toggleHeart(): void {
     this.visible = !this.visible;
-    console.log(this.visible);
   }
 }
