@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { OnInit } from "@angular/core";
+
 import { ProfileService } from '../profile.service';
 import { Profile } from '../profile';
 
@@ -13,11 +14,10 @@ export class HomePage implements OnInit{
   visible: boolean = true;
   profiles: Profile[] = []; // store array of profiles
 
-  // constructor(private profileService: ProfileService){}
-  constructor(){}
+  constructor(private profileService: ProfileService){}
 
   ngOnInit(): void {
-    // this.profiles = this.profileService.getProfiles();
+    this.profiles = this.profileService.getProfiles();
   }
 
   toggleHeart(): void {
