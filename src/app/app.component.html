@@ -6,13 +6,15 @@
   </ion-toolbar>
 </ion-header>
 
-
+<!-- 
 <div *ngIf="showSplash" class="splash">
   <div class="spinner">
     <div class="dot1"></div>
     <div class="dot2"></div>
   </div>
 </div>
+-->
+
 
 <!-- Router-->
 <ion-app>
@@ -27,10 +29,10 @@
   </ion-fab-button>
 
   <ion-fab-list side="top">
-    <ion-fab-button [routerDirection]="settings"><ion-icon name="settings"></ion-icon></ion-fab-button>
-    <ion-fab-button [routerDirection]="camera"><ion-icon name="camera"></ion-icon></ion-fab-button>
-    <ion-fab-button [routerDirection]="chat"><ion-icon ios="ios-chatbubbles" md="md-chatbubbles"></ion-icon></ion-fab-button>
-    <ion-fab-button [routerDirection]="home"><ion-icon name="home"></ion-icon></ion-fab-button>
+    <ion-fab-button routerLink="settings"><ion-icon name="settings"></ion-icon></ion-fab-button>
+    <ion-fab-button routerLink="/camera"><ion-icon name="camera"></ion-icon></ion-fab-button>
+    <ion-fab-button routerLink="chat"><ion-icon ios="ios-chatbubbles" md="md-chatbubbles"></ion-icon></ion-fab-button>
+    <ion-fab-button routerLink="/home"><ion-icon name="home"></ion-icon></ion-fab-button>
   </ion-fab-list>
 
 </ion-fab>
