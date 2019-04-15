@@ -7,6 +7,8 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { HomePage } from './home.page';
 
+// import { ProfileService } from '../profile.service';
+
 
 @NgModule({
   imports: [
@@ -22,5 +24,6 @@ import { HomePage } from './home.page';
     ])
   ],
   declarations: [ HomePage ],
+  // providers: [ProfileService]
 })
 export class HomePageModule {}

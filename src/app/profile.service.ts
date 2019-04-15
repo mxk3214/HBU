@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Observable, of } from 'rxjs';
 import { HttpClient} from '@angular/common/http';
 import { Profile } from './profile';
+import { catchError, map } from 'rxjs/operators';
 
 
 @Injectable({
@@ -10,9 +10,8 @@ import { Profile } from './profile';
 })
 export class ProfileService {
   // Array of profiles
-  // profiles: Profile[] = [];
-  profiles: any[] = [];
-
+  profiles: Profile[] = [];
+  // profiles: any[] = [];
 
   // URL to API
   httpUrl: string = 'https://reqres.in/api/users';
@@ -21,25 +20,35 @@ export class ProfileService {
   // Constructor
   constructor(private http: HttpClient) { 
     // this.profiles = this.initialCall();
-    this.initialCall();
+    // this.initialCall();
+
+    // NEED TO LOAD 
   }
 
   // First call to get all data
-  initialCall(): Observable<Profile[]> {
-    // return this.http.get<any>(this.httpUrl).pipe(
-    //   map( result => result.data as Profile[] )
-    // );
-    this.http.get(this.httpUrl).subscribe((response) => {
-      console.log(response);
-    });
+  // initialCall(): void {
+  //   this.http.get<any>(this.httpUrl).subscribe((response) => {
+  //     console.log(response.data);
+  //   });
+  // }
+  
 
-
-    return this.http.get<any>(this.httpUrl);
+  getProfiles(): Observable<Profile[]> {
+    return this.http.get<any>(this.httpUrl).pipe(
+      catchError((err) => {
+        console.error(err);
+        return of({data: []});
+      }),
+      map( res => res.data as Profile[])
+    );
   }
+
+
 
   // Function to return loaded profiles array
-  getProfiles(): Profile[] {
-    return this.profiles;
-  }
+  // getProfiles(): Profile[] {
+  //   console.log(this.profiles);
+  //   return this.profiles;
+  // }
   
 }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { OnInit } from "@angular/core";
 
 import { ProfileService } from '../profile.service';
@@ -16,8 +16,19 @@ export class HomePage implements OnInit{
 
   constructor(private profileService: ProfileService){}
 
-  ngOnInit(): void {
-    this.profiles = this.profileService.getProfiles();
+  ngOnInit() {
+    // this.profiles = this.profileService.getProfiles();
+    this.getProfile();
+  }
+
+  getProfile() {
+    const obs: Observable<Profile[]> = this.profileService.getProfiles();
+    obs.subscribe(
+      (prof: Profile[]) => this.profiles = prof
+    );
+    // obs.subscribe((response) => {
+    //   console.log(response);
+    // });
   }
 
   toggleHeart(): void {
