@@ -11,6 +11,8 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { HttpClientModule } from '@angular/common/http';
 
+import { Camera } from '@ionic-native/camera/ngx';
+
 // import { ProfileService } from './profile.service';
 
 
@@ -26,6 +28,7 @@ import { HttpClientModule } from '@angular/common/http';
   providers: [
     StatusBar,
     SplashScreen,
+    Camera,
     // ProfileService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],

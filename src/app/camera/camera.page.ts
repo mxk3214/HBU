@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-// import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
+import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 
 @Component({
   selector: 'app-camera',
@@ -8,58 +8,71 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CameraPage implements OnInit {
 
-  // constructor(private camera: Camera) { }
-  constructor(){}
+  // constructor(){}
+  constructor(private camera: Camera) { }
 
   ngOnInit() {
-    document.addEventListener("deviceready", this.onDeviceReady, false);
+    // document.addEventListener("deviceready", this.onDeviceReady, false);
   }
 
   onDeviceReady(){
-    console.log("Navigator is ready");
+    // console.log("Navigator is ready");
   }
 
-  // options: CameraOptions = {
-  //   quality: 100,
-  //   destinationType: this.camera.DestinationType.FILE_URI,
-  //   encodingType: this.camera.EncodingType.JPEG,
-  //   mediaType: this.camera.MediayType.PICTURE
-  // }
 
   // Use camera plugin to take photo
   takePhoto(){
-    navigator.camera.getPicture(this.photoSuccess, this.photoFail, {
+    const options: CameraOptions = {
       quality: 100,
-      destinationType: Camera.DestinationType.DATA_URL,
-      targetWidth: 300,
-      targetHeight: 300
-    });
+      destinationType: this.camera.DestinationType.FILE_URI,
+      encodingType: this.camera.EncodingType.JPEG,
+      mediaType: this.camera.MediaType.PICTURE,
+      sourceType: this.camera.PictureSourceType.CAMERA,
+    }
+
+    // this.camera.getPicture(options).then((imageData) => {
+    //   // imageData is either a base64 encoded string or a file URI
+    //   // If it's base64 (DATA_URL):
+    //   let base64Image = 'data:image/jpeg;base64,' + imageData;
+    //   console.log(base64Image);
+
+    //  }, (err) => {
+    //    console.log(err);
+    //   // Handle error
+    //  });
+
+    this.camera.getPicture(options).then(this.takePictureSuccess, this.takePictureFail);
   }
 
-  photoSuccess(imageData){
-    // Make a new post
-    // make a new image object
+  takePictureSuccess(imageData){
+    let takenImage = 'data:image/jpeg;base64,' + imageData;
+    console.log(takenImage);
   }
-  photoFail(message){
-    alert("Uh Oh! Something went wrong: " + message);
+  takePictureFail(error){
+    console.log("ERROR: " + error);
   }
 
 
 
   // Use camera plugin to get photo
   fromLibrary(){
-    navigator.camera.getPicture(this.librarySuccess, this.libraryFail, {
+    const options: CameraOptions = {
       quality: 100,
-      destinationType: Camera.DestinationType.DATA_URL,
-      sourceType: Camera.PictureSourceType.PHOTOLIBRARY
-    });
-  }
+      destinationType: this.camera.DestinationType.DATA_URL,
+      encodingType: this.camera.EncodingType.JPEG,
+      mediaType: this.camera.MediaType.PICTURE,
+      sourceType: this.camera.PictureSourceType.PHOTOLIBRARY
+    }
 
-  librarySuccess(){
-    // make an image post
-  }
-  libraryFail(message){
-    alert("Uh oh, something went wrong: " + message);
-  }
+    this.camera.getPicture(options).then((imageData) => {
+      // imageData is either a base64 encoded string or a file URI
+      // If it's base64 (DATA_URL):
+      let base64Image = 'data:image/jpeg;base64,' + imageData;
+      console.log(base64Image);
 
+     }, (err) => {
+       console.log(err);
+      // Handle error
+     });
+  }
 }
