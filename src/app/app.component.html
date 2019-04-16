@@ -22,19 +22,31 @@
 </ion-app>
 
 
-<!-- Menu for all pages -->
-<ion-fab vertical="bottom" horizontal="end" slot="fixed">
-  <ion-fab-button class="main-theme-color">
-    <ion-icon name="add-circle-outline" id="home-button-icon"></ion-icon>
-  </ion-fab-button>
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
 
-  <ion-fab-list side="top">
-    <ion-fab-button routerLink="settings"><ion-icon name="settings"></ion-icon></ion-fab-button>
-    <ion-fab-button routerLink="/camera"><ion-icon name="camera"></ion-icon></ion-fab-button>
-    <ion-fab-button routerLink="chat"><ion-icon ios="ios-chatbubbles" md="md-chatbubbles"></ion-icon></ion-fab-button>
-    <ion-fab-button routerLink="/home"><ion-icon name="home"></ion-icon></ion-fab-button>
-  </ion-fab-list>
+    <ion-tab-button tab="home" routerLink="home">
+      <ion-label>Home</ion-label>
+      <ion-icon name="home"></ion-icon>
+    </ion-tab-button>
 
-</ion-fab>
+    <ion-tab-button tab="camera" routerLink="camera">
+      <ion-label>Camera</ion-label>
+      <ion-icon name="camera"></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button tab="message" routerLink="message">
+      <ion-label>Message</ion-label>
+      <ion-icon name="chatboxes"></ion-icon>
+      <ion-badge>5</ion-badge>
+    </ion-tab-button>
+
+    <ion-tab-button tab="settings" routerLink="settings">
+      <ion-label>Settings</ion-label>
+      <ion-icon name="settings"></ion-icon>
+    </ion-tab-button>
+
+  </ion-tab-bar>
+</ion-tabs>
 
 

@@ -11,7 +11,23 @@
 @import '~@ionic/angular/css/flex-utils.css';
 
 /** Custom color */
-.main-theme-color{
+// .main-theme-color{
+//   --ion-color-primary: #FF808B;
+//   --ion-color-primary-rgb: 255,128,139;
+//   --ion-color-primary-contrast: #000000;
+//   --ion-color-primary-contrast-rgb: 0,0,0;
+//   --ion-color-primary-shade: #e0717a;
+//   --ion-color-primary-tint: #ff8d97;
+// }
+.title{
+  text-align: center;
+}
+
+// Bottom tab bar selected button
+ion-tab-button{
+  --color-selected: #FF808B;;
+}
+ion-badge{
   --ion-color-primary: #FF808B;
   --ion-color-primary-rgb: 255,128,139;
   --ion-color-primary-contrast: #000000;
@@ -19,14 +35,7 @@
   --ion-color-primary-shade: #e0717a;
   --ion-color-primary-tint: #ff8d97;
 }
-/* Home button icon color */
-#home-button-icon{
-  color: white;
-}
 
-.title{
-  text-align: center;
-}
 
 
 /** Splash screen */
