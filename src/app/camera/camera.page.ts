@@ -6,18 +6,10 @@ import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
   templateUrl: './camera.page.html',
   styleUrls: ['./camera.page.scss'],
 })
-export class CameraPage implements OnInit {
+export class CameraPage{
 
   // constructor(){}
   constructor(private camera: Camera) { }
-
-  ngOnInit() {
-    // document.addEventListener("deviceready", this.onDeviceReady, false);
-  }
-
-  onDeviceReady(){
-    // console.log("Navigator is ready");
-  }
 
 
   // Use camera plugin to take photo
@@ -44,12 +36,15 @@ export class CameraPage implements OnInit {
     this.camera.getPicture(options).then(this.takePictureSuccess, this.takePictureFail);
   }
 
+
   takePictureSuccess(imageData){
-    let takenImage = 'data:image/jpeg;base64,' + imageData;
-    console.log(takenImage);
+    var newImage = document.createElement('img');
+    newImage.src = 'data:image/jpeg;base64,' + imageData;
+    document.getElementById("test2").append(newImage);
+    // image.src = 'data:image/jpeg;base64,' + imageData;
   }
   takePictureFail(error){
-    console.log("ERROR: " + error);
+    alert("Uh Oh, something went wrong! Make sure that you allow access to the device's camera!");
   }
 
 
@@ -65,9 +60,11 @@ export class CameraPage implements OnInit {
     }
 
     this.camera.getPicture(options).then((imageData) => {
-      // imageData is either a base64 encoded string or a file URI
-      // If it's base64 (DATA_URL):
       let base64Image = 'data:image/jpeg;base64,' + imageData;
+      var image = document.createElement('img');
+      image.src = base64Image;
+
+      document.getElementById("test").append(image);
       console.log(base64Image);
 
      }, (err) => {
