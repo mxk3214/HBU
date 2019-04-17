@@ -1,22 +1,22 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MessagePage } from './message.page';
+import { ChatPage } from './chat.page';
 
-describe('MessagePage', () => {
-  let component: MessagePage;
-  let fixture: ComponentFixture<MessagePage>;
+describe('ChatPage', () => {
+  let component: ChatPage;
+  let fixture: ComponentFixture<ChatPage>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MessagePage ],
+      declarations: [ ChatPage ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MessagePage);
+    fixture = TestBed.createComponent(ChatPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

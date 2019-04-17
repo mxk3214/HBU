@@ -13,7 +13,6 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { Camera } from '@ionic-native/camera/ngx';
 
-// import { ProfileService } from './profile.service';
 
 
 @NgModule({
@@ -29,7 +28,6 @@ import { Camera } from '@ionic-native/camera/ngx';
     StatusBar,
     SplashScreen,
     Camera,
-    // ProfileService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

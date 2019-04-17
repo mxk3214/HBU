@@ -1,5 +1,6 @@
 <!-- Card template - TEMP -->
 <ion-content>
+
   <ion-card>
     <ion-card-header>
       <ion-segment>
@@ -7,9 +8,8 @@
       </ion-segment>
     </ion-card-header>
 
-    <ion-card-content>
-      Keep close to Nature's heart... and break clear away, once in awhile,
-      and climb a mountain or spend a week in the woods. Wash your spirit clean.
+    <ion-card-content *ngFor="let image of images">
+     {{image.id}}
     </ion-card-content>
 
     <ion-segment>
@@ -21,6 +21,8 @@
       </div>
     </ion-segment>
   </ion-card>
+
+
 </ion-content> 
 
 

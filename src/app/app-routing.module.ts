@@ -4,9 +4,8 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', loadChildren: './home/home.module#HomePageModule' },
-  { path: 'camera', loadChildren: './camera/camera.module#CameraPageModule' },  { path: 'settings', loadChildren: './settings/settings.module#SettingsPageModule' },
-  { path: 'message', loadChildren: './message/message.module#MessagePageModule' },
-
+  { path: 'camera', loadChildren: './camera/camera.module#CameraPageModule' },
+  { path: 'chat', loadChildren: './chat/chat.module#ChatPageModule' },
 ];
 
 @NgModule({
