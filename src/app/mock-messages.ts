@@ -19,7 +19,7 @@ export const MESSAGES: Message[] = [
     },
     {
         id: 5,
-        value: "I've been working on Foundations Of Mobile Desing Project 4"
+        value: "I've been working on the Foundations Of Mobile Design Project 4"
     }
 
 ];
