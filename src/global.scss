@@ -11,14 +11,14 @@
 @import '~@ionic/angular/css/flex-utils.css';
 
 /** Custom color */
-// .main-theme-color{
-//   --ion-color-primary: #FF808B;
-//   --ion-color-primary-rgb: 255,128,139;
-//   --ion-color-primary-contrast: #000000;
-//   --ion-color-primary-contrast-rgb: 0,0,0;
-//   --ion-color-primary-shade: #e0717a;
-//   --ion-color-primary-tint: #ff8d97;
-// }
+.main-theme-color{
+  --ion-color-primary: #FF808B;
+  --ion-color-primary-rgb: 255,128,139;
+  --ion-color-primary-contrast: #000000;
+  --ion-color-primary-contrast-rgb: 0,0,0;
+  --ion-color-primary-shade: #e0717a;
+  --ion-color-primary-tint: #ff8d97;
+}
 .title{
   text-align: center;
 }
