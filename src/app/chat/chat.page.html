@@ -10,9 +10,14 @@
     <p id="heading">Messages<p>
 
     <div *ngFor="let message of messages">
-      <p id="evenBox" *ngIf="message.id % 2 == 0">{{message.value}}</p>
       <p id="oddBox" *ngIf="message.id % 2 != 0">{{message.value}}</p>
+      <p id="evenBox" *ngIf="message.id % 2 == 0">{{message.value}}</p>
     </div>
+
+    <input id="message-input" [(ngModel)]="newMsg" (blur)="sendMessage()" placeholder="Message...">
+    <ion-button>
+      <ion-icon name="send" ></ion-icon>
+    </ion-button>
 
   </div>
 </ion-content>

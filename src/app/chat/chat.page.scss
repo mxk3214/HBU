@@ -15,6 +15,7 @@
     height: 5em;
     border-radius: 1em;
     padding: 1em;
+    overflow: hidden;
 }
 #evenBox{
     background-color: pink;
@@ -27,11 +28,31 @@
     margin-right: 20em;
 }
 
+#message-input{
+    width: 90%;
+    padding: .8em;
+    border-radius: 1em;
+    margin: 1.5em 0;
+}
+
+
+
 @media screen and (max-width: 900px){
     #container{
         margin: 1em 0 0 0;
     }
     #evenBox, #oddBox{
-        margin: 0;
+        margin: .8em 0;
+    }
+    #evenBox{
+        margin-left: 2em;
+    }
+    #oddBox{
+        margin-right: 2em;
+    }
+
+    #message-input{
+        width: 60%;
+        margin: auto 2em;
     }
 }
