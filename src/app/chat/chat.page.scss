@@ -1,3 +1,37 @@
+#container{
+    margin: 2em 10em;
+}
+
+
 #heading{
     margin: 2em;
+    font-weight: bold;
+    font-size: 2rem;
+    text-align: center;
+}
+
+
+#evenBox, #oddBox{
+    height: 5em;
+    border-radius: 1em;
+    padding: 1em;
+}
+#evenBox{
+    background-color: pink;
+    text-align: end;
+    margin-left: 20em;
+}
+#oddBox{
+    background-color: #FF808B;
+    text-align: start;
+    margin-right: 20em;
+}
+
+@media screen and (max-width: 900px){
+    #container{
+        margin: 1em 0 0 0;
+    }
+    #evenBox, #oddBox{
+        margin: 0;
+    }
 }

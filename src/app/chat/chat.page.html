@@ -5,5 +5,14 @@
 </ion-header>
 
 <ion-content>
-  <p id="heading">Messages<p>
+  <div id="container">
+
+    <p id="heading">Messages<p>
+
+    <div *ngFor="let message of messages">
+      <p id="evenBox" *ngIf="message.id % 2 == 0">{{message.value}}</p>
+      <p id="oddBox" *ngIf="message.id % 2 != 0">{{message.value}}</p>
+    </div>
+
+  </div>
 </ion-content>
