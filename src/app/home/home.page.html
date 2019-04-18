@@ -12,6 +12,11 @@
      {{image.id}}
     </ion-card-content>
 
+    <p *ngFor="let profile of profiles">
+      {{profile.avatar}}
+      {{profile.first_name}}
+    </p>
+
     <ion-segment>
       <div (click)="toggleHeart()">
         <!-- Source: https://www.flaticon.com/free-icon/love_1029183#term=heart&page=1&position=9-->

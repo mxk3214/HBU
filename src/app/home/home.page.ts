@@ -15,26 +15,29 @@ import { Image } from '../image';
 })
 export class HomePage implements OnInit{
   visible: boolean = true;
-  profiles: Profile[] = []; // store array of profiles
+
+  profiles: Profile[] = [];
   images: Image[] = [];
 
+  
   constructor(private profileService: ProfileService, private imageService: ImageService){}
 
   ngOnInit() {
-    // this.profiles = this.profileService.getProfiles();
     this.getProfile();
     this.getAllImages();
   }
 
+
+
   getProfile() {
     const obs: Observable<Profile[]> = this.profileService.getProfiles();
+    console.log(obs);
     obs.subscribe(
       (prof: Profile[]) => this.profiles = prof
     );
-    // obs.subscribe((response) => {
-    //   console.log(response);
-    // });
+    console.log(this.profiles); // CHECK: if getting data correctly
   }
+
 
 
   getAllImages() {
@@ -46,11 +49,12 @@ export class HomePage implements OnInit{
     // console.log(this.images);
 
     this.images = this.imageService.getImages();
-    console.log(this.images);
+    //console.log(this.images);
   }
 
 
 
+  // Might remove...
   toggleHeart(): void {
     this.visible = !this.visible;
   }

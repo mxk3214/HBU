@@ -21,10 +21,11 @@ export class ImageService {
   getImages() {
     this.http.get<any>(this.httpUrl).subscribe((response) => {
         this.images.push(response.data);
-
-        // console.log(response.data[0].images.fixed_height.url);
-        // Image image = new Image(response.data, response.data.images.fixed_height.url);
+        //console.log(response.data[0].images.original_still)
     });
     return this.images;
+    
+    // data array of images array of each object
+    // results.data.images;
  }  
 }
