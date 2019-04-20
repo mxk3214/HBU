@@ -28,13 +28,4 @@ export class ProfileService {
       map( res => res.data as Profile[] )
     );
   }
-
-    // this.profiles.push( mapped profiles )
-        // map(res => res.data as new Profile = {
-      //   id: res.data.id,
-      //   first_name: res.data.firstName,
-      //   last_name: res.data.lastName,
-      //   avatar: res.data.avatar
-      // });
-
 }

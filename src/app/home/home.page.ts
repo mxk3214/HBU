@@ -31,24 +31,22 @@ export class HomePage implements OnInit{
 
   getProfile() {
     const obs: Observable<Profile[]> = this.profileService.getProfiles();
-    console.log(obs);
     obs.subscribe(
       (prof: Profile[]) => this.profiles = prof
     );
-    console.log(this.profiles); // CHECK: if getting data correctly
   }
 
 
 
   getAllImages() {
-    // this.images = this.imageService.getImages();
+    //this.images = this.imageService.getImages();
     // const obs: Observable<Image[]>  = this.imageService.getImages();
     // obs.subscribe(
     //   (imgs: Image[]) => this.images = imgs
     // );
     // console.log(this.images);
 
-    this.images = this.imageService.getImages();
+    //this.images = this.imageService.getImages();
     //console.log(this.images);
   }
 

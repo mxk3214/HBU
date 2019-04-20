@@ -1,21 +1,32 @@
 <!-- Card template - TEMP -->
 <ion-content>
 
-  <ion-card>
+  <ion-card> <!-- would have the *ngFor to loop through post object -->
     <ion-card-header>
       <ion-segment>
-          <ion-label>Friends</ion-label>
+        TEMP
+        <!-- <ion-label *ngFor="let profile of proviles">{{profile.first_name}}</ion-label> -->
       </ion-segment>
     </ion-card-header>
 
+<!-- 
     <ion-card-content *ngFor="let image of images">
      {{image.id}}
     </ion-card-content>
+-->
 
     <p *ngFor="let profile of profiles">
-      {{profile.avatar}}
+      <ion-avatar>
+        <img src={{profile.avatar}} >
+      </ion-avatar>
+
+      <!-- {{profile.avatar}} -->
       {{profile.first_name}}
+      {{profile.last_name}}
     </p>
+
+
+
 
     <ion-segment>
       <div (click)="toggleHeart()">
