@@ -39,15 +39,10 @@ export class HomePage implements OnInit{
 
 
   getAllImages() {
-    //this.images = this.imageService.getImages();
-    // const obs: Observable<Image[]>  = this.imageService.getImages();
-    // obs.subscribe(
-    //   (imgs: Image[]) => this.images = imgs
-    // );
-    // console.log(this.images);
-
-    //this.images = this.imageService.getImages();
-    //console.log(this.images);
+    const obs: Observable<Image[]>  = this.imageService.getImages();
+    obs.subscribe(
+      (imgs: Image[]) => this.images = imgs
+    );
   }
 
 

@@ -12,8 +12,9 @@ import { createOfflineCompileUrlResolver } from '@angular/compiler';
 export class ImageService {
   images: Image[] = [];
 
-  httpUrl: string = "https://api.giphy.com/v1/gifs/search?api_key=vpT2skP1Oe92cFBdwvtpULt59DHzqasJ&q=nature&limit=3&offset=0&rating=G&lang=en";
+ // httpUrl: string = "https://api.giphy.com/v1/gifs/search?api_key=vpT2skP1Oe92cFBdwvtpULt59DHzqasJ&q=nature&limit=3&offset=0&rating=G&lang=en";
 
+  httpUrl: string = "https://picsum.photos/v2/list?page=1&limit=3";
 
   constructor(private http : HttpClient) {}
 
@@ -33,7 +34,7 @@ export class ImageService {
         console.error(err);
         return of({data: []});
       }),
-      map( res => res.data as Image[] ) // not going to work as not full of images
+      map( res => res as Image[] ) // not going to work as not full of images
     );
   }  
 }
