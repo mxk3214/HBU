@@ -9,26 +9,34 @@
       </ion-segment>
     </ion-card-header>
 
-<!-- 
-    <ion-card-content *ngFor="let image of images">
-     {{image.id}}
-    </ion-card-content>
--->
-
+    <p *ngIf="profiles.length > 0">
+      Test
+    </p>
+    
+<!---
     <p *ngFor="let profile of profiles">
       <ion-avatar>
         <img src={{profile.avatar}} >
       </ion-avatar>
 
-      <!-- {{profile.avatar}} -->
       {{profile.first_name}}
-      {{profile.last_name}}
     </p>
 
     <p *ngFor="let image of images">
        <img src={{image.download_url}} >
     </p>
+-->
 
+
+
+  <p *ngFor="let post of posts">
+      <ion-avatar>
+        <img src={{post.user.avatar}} >
+      </ion-avatar>
+
+      {{post.user.first_name}}
+       <img src={{post.user_image.download_url}} >
+    </p>
 
 
 

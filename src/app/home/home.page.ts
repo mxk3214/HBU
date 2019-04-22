@@ -8,6 +8,10 @@ import { Profile } from '../profile';
 import { ImageService } from '../image.service';
 import { Image } from '../image';
 
+import {PostService} from '../post.service';
+import { Post } from '../post';
+
+
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -19,31 +23,40 @@ export class HomePage implements OnInit{
   profiles: Profile[] = [];
   images: Image[] = [];
 
-  
-  constructor(private profileService: ProfileService, private imageService: ImageService){}
+  posts: Post[] = [];
+
+  // private profileService: ProfileService, private imageService: ImageService
+  // private postService: PostService
+  //constructor(private profileService: ProfileService, private imageService: ImageService){}
+  constructor(private postService: PostService){}
 
   ngOnInit() {
-    this.getProfile();
-    this.getAllImages();
+    // this.getProfile();
+    // this.getAllImages();
+    // this.posts = this.postService.getPosts();
+    this.getPosts();
   }
 
-
-
-  getProfile() {
-    const obs: Observable<Profile[]> = this.profileService.getProfiles();
-    obs.subscribe(
-      (prof: Profile[]) => this.profiles = prof
-    );
+  async getPosts(){
+    this.posts = await this.postService.getPosts();
   }
 
+  // async getProfile() {
+  //   const obs: Observable<Profile[]> = await this.profileService.getProfiles();
+  //   obs.subscribe(
+  //     (prof: Profile[]) => this.profiles = prof
+  //   );
+  //   console.log(this.profiles);
+  // }
 
 
-  getAllImages() {
-    const obs: Observable<Image[]>  = this.imageService.getImages();
-    obs.subscribe(
-      (imgs: Image[]) => this.images = imgs
-    );
-  }
+
+  // async getAllImages() {
+  //   const obs: Observable<Image[]>  = await this.imageService.getImages();
+  //   obs.subscribe(
+  //     (imgs: Image[]) => this.images = imgs
+  //   );
+  // }
 
 
 
