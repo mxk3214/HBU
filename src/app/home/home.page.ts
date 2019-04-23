@@ -34,11 +34,9 @@ export class HomePage implements OnInit{
     // this.getProfile();
     // this.getAllImages();
     // this.posts = this.postService.getPosts();
-    this.getPosts();
-  }
 
-  async getPosts(){
-    this.posts = await this.postService.getPosts();
+    //this.getPosts();
+    this.posts = this.postService.getPosts();
   }
 
   // async getProfile() {

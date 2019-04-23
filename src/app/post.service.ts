@@ -16,11 +16,14 @@ export class PostService {
   posts: Post[] = [];
   post: Post;
 
+  
   constructor(private profileService: ProfileService, private imageService: ImageService) { }
 
-  async getPosts(){
-    await this.getProfile();
-    await this.getAllImages();
+  getPosts(){
+    this.getProfile();
+    this.getAllImages();
+
+    console.log(this.posts.length);
 
     
     // Doesn't make it inside here as having issues with loading profile array
