@@ -42,6 +42,7 @@ export class PostService {
   }
 
   
+  
   // Gets profile using the profile service
   getProfile() {
     const obs: Observable<Profile[]> = this.profileService.getProfiles();
@@ -49,6 +50,7 @@ export class PostService {
       (prof: Profile[]) => this.profiles = prof
     );
   }
+
 
   // Gets images using the image service
   getAllImages() {

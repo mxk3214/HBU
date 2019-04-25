@@ -1,6 +1,4 @@
-<!-- Card template - TEMP -->
 <ion-content>
-
   <ion-card> <!-- would have the *ngFor to loop through post object -->
     <ion-card-header>
       <ion-segment>
@@ -9,9 +7,11 @@
       </ion-segment>
     </ion-card-header>
 
+<!--
     <p *ngIf="profiles.length > 0">
       Test
     </p>
+-->
     
 <!---
     <p *ngFor="let profile of profiles">
@@ -27,8 +27,6 @@
     </p>
 -->
 
-
-
   <p *ngFor="let post of posts">
       <ion-avatar>
         <img src={{post.user.avatar}} >
@@ -40,6 +38,7 @@
 
 
 
+    <!-- Might not work since will make all cards liked if clicked on one-->
     <ion-segment>
       <div (click)="toggleHeart()">
         <!-- Source: https://www.flaticon.com/free-icon/love_1029183#term=heart&page=1&position=9-->

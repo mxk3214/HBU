@@ -24,7 +24,7 @@ export class ImageService {
         console.error(err);
         return of({data: []});
       }),
-      map( res => res as Image[] ) // not going to work as not full of images
+      map( res => res as Image[] ) 
     );
   }  
 }
