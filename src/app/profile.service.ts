@@ -19,6 +19,7 @@ export class ProfileService {
   constructor(private http: HttpClient) {}
 
 
+  // Get Profiles from API
   getProfiles(): Observable<Profile[]> {
     return this.http.get<any>(this.httpUrl).pipe(
       catchError((err) => {

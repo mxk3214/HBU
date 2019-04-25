@@ -19,6 +19,8 @@ export class PostService {
 
   constructor(private profileService: ProfileService, private imageService: ImageService) { }
 
+  // Gets profile array and images array
+  // Will combine into one post object array to iterate over for the template
   getPosts(){
     this.getProfile(); // get profiles
     this.getAllImages(); // get images
@@ -28,11 +30,13 @@ export class PostService {
     console.log(this.posts.length); // 0
 
     
-    // Doesn't get here bc of timing!
-    for(var i = 0; i < this.profiles.length; i++){
-        this.post = new Post(this.profiles[i], this.images[i]);
-        this.posts.push(this.post);
-    }  
+    // Want to make one object array out of the two arrays
+    // Profile OBJ has both an profile object and a image object
+
+    // for(var i = 0; i < this.profiles.length; i++){
+    //     this.post = new Post(this.profiles[i], this.images[i]);
+    //     this.posts.push(this.post);
+    // }  
       
     return this.posts; // becomes undefined
   }
