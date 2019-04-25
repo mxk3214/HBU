@@ -16,27 +16,29 @@ export class PostService {
   posts: Post[] = [];
   post: Post;
 
-  
+
   constructor(private profileService: ProfileService, private imageService: ImageService) { }
 
   getPosts(){
-    this.getProfile();
-    this.getAllImages();
+    this.getProfile(); // get profiles
+    this.getAllImages(); // get images
 
-    console.log(this.posts.length);
+
+    // Array length check: 
+    console.log(this.posts.length); // 0
 
     
-    // Doesn't make it inside here as having issues with loading profile array
+    // Doesn't get here bc of timing!
     for(var i = 0; i < this.profiles.length; i++){
-      console.log("In post service for loop");
         this.post = new Post(this.profiles[i], this.images[i]);
         this.posts.push(this.post);
     }  
       
-    return this.posts;
+    return this.posts; // becomes undefined
   }
+
   
-  
+  // Gets profile using the profile service
   getProfile() {
     const obs: Observable<Profile[]> = this.profileService.getProfiles();
     obs.subscribe(
@@ -44,6 +46,7 @@ export class PostService {
     );
   }
 
+  // Gets images using the image service
   getAllImages() {
     const obs: Observable<Image[]> = this.imageService.getImages();
     obs.subscribe(
