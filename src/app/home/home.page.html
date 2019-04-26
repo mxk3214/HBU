@@ -1,46 +1,19 @@
 <ion-content>
-  <ion-card> <!-- would have the *ngFor to loop through post object -->
+  <ion-card *ngFor="let image of images"> 
     <ion-card-header>
       <ion-segment>
-        TEMP
-        <!-- <ion-label *ngFor="let profile of proviles">{{profile.first_name}}</ion-label> -->
+        <ion-icon name="contact" size="large"></ion-icon>
       </ion-segment>
     </ion-card-header>
 
-<!--
-    <p *ngIf="profiles.length > 0">
-      Test
-    </p>
--->
-    
-<!---
-    <p *ngFor="let profile of profiles">
-      <ion-avatar>
-        <img src={{profile.avatar}} >
-      </ion-avatar>
-
-      {{profile.first_name}}
-    </p>
-
-    <p *ngFor="let image of images">
-       <img src={{image.download_url}} >
-    </p>
--->
-
-  <p *ngFor="let post of posts">
-      <ion-avatar>
-        <img src={{post.user.avatar}} >
-      </ion-avatar>
-
-      {{post.user.first_name}}
-       <img src={{post.user_image.download_url}} >
-    </p>
-
+    <ion-card-content>
+      <img src={{image.download_url}} class="image-styling">
+    </ion-card-content>
 
 
     <!-- Might not work since will make all cards liked if clicked on one-->
     <ion-segment>
-      <div (click)="toggleHeart()">
+      <div (click)="toggleHeart(this)">
         <!-- Source: https://www.flaticon.com/free-icon/love_1029183#term=heart&page=1&position=9-->
         <img src="../assets/emptyHeart.svg" *ngIf="visible" class="like-heart">
         <!-- Source: https://www.flaticon.com/free-icon/like_149217#term=heart&page=1&position=2-->

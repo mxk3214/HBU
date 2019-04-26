@@ -4,16 +4,16 @@ import { HttpClient} from '@angular/common/http';
 import { catchError, map } from 'rxjs/operators';
 
 import { Image } from './image';
-import { createOfflineCompileUrlResolver } from '@angular/compiler';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ImageService {
-  images: Image[] = [];
+  images: Image[] = []; 
+
 
   // URL
-  httpUrl: string = "https://picsum.photos/v2/list?page=1&limit=3";
+  httpUrl: string = "https://picsum.photos/v2/list?page=1&limit=6";
 
   constructor(private http : HttpClient) {}
 

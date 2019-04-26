@@ -10,3 +10,14 @@ ion-card{
     width: 2em;
 }
 
+
+// Card (post) content
+ion-card-content{
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+}
+.image-styling{
+    max-width: 960px;
+    max-height: 540px;
+}

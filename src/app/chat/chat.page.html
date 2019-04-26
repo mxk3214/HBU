@@ -11,7 +11,7 @@
 
     <div *ngFor="let message of messages">
       <p id="oddBox" *ngIf="message.id % 2 != 0"><ion-icon name="contact" size="large"></ion-icon>{{message.value}}</p>
-      <p id="evenBox" *ngIf="message.id % 2 == 0">{{message.value}}<ion-icon name="contact" size="large"></ion-icon></p>
+      <p id="evenBox" *ngIf="message.id % 2 == 0">{{message.value}}</p>
     </div>
 
     <input id="message-input" [(ngModel)]="newMsg" (blur)="sendMessage()" placeholder="Message...">

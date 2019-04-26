@@ -20,46 +20,46 @@ import { Post } from '../post';
 export class HomePage implements OnInit{
   visible: boolean = true;
 
-  profiles: Profile[] = [];
+  //profiles: Profile[] = [];
   images: Image[] = [];
 
-  posts: Post[] = [];
+  //posts: Post[] = [];
 
   // private profileService: ProfileService, private imageService: ImageService
   // private postService: PostService
-  //constructor(private profileService: ProfileService, private imageService: ImageService){}
-  constructor(private postService: PostService){}
+  
+  constructor(private imageService: ImageService){}
+  //constructor(private postService: PostService){}
 
   ngOnInit() {
-    // this.getProfile();
-    // this.getAllImages();
-    // this.posts = this.postService.getPosts();
-
+    ///this.getProfile();
+    this.getAllImages();
     //this.getPosts();
-    this.posts = this.postService.getPosts();
+    //this.posts = this.postService.getPosts();
   }
+
+  
 
   // async getProfile() {
   //   const obs: Observable<Profile[]> = await this.profileService.getProfiles();
   //   obs.subscribe(
   //     (prof: Profile[]) => this.profiles = prof
   //   );
-  //   console.log(this.profiles);
   // }
 
 
 
-  // async getAllImages() {
-  //   const obs: Observable<Image[]>  = await this.imageService.getImages();
-  //   obs.subscribe(
-  //     (imgs: Image[]) => this.images = imgs
-  //   );
-  // }
+  async getAllImages() {
+    const obs: Observable<Image[]>  = await this.imageService.getImages();
+    obs.subscribe(
+      (imgs: Image[]) => this.images = imgs
+    );
+  }
 
 
 
   // Might remove...
-  toggleHeart(): void {
+  toggleHeart(){
     this.visible = !this.visible;
   }
 }
