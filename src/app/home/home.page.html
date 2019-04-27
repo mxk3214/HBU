@@ -7,18 +7,19 @@
     </ion-card-header>
 
     <ion-card-content>
-      <img src={{image.download_url}} class="image-styling">
+      <img src={{image.download_url}}>
     </ion-card-content>
 
 
-    <!-- Might not work since will make all cards liked if clicked on one-->
     <ion-segment>
-      <div (click)="toggleHeart(this)">
-        <!-- Source: https://www.flaticon.com/free-icon/love_1029183#term=heart&page=1&position=9-->
-        <img src="../assets/emptyHeart.svg" *ngIf="visible" class="like-heart">
-        <!-- Source: https://www.flaticon.com/free-icon/like_149217#term=heart&page=1&position=2-->
-        <img src="../assets/filledHeart.svg" *ngIf="!visible" class="like-heart">
-      </div>
+      <!-- Source: https://www.flaticon.com/free-icon/love_1029183#term=heart&page=1&position=9-->
+      <!-- Source: https://www.flaticon.com/free-icon/like_149217#term=heart&page=1&position=2-->
+<!--      <div (click)="toggleHeart()">
+        <img src="../assets/emptyHeart.svg" *ngIf="visible" class="like-heart">  
+        <img src="../assets/filledHeart.svg" *ngIf="!visible" class="like-heart"> 
+      </div> 
+-->
+        <ion-checkbox></ion-checkbox>
     </ion-segment>
   </ion-card>
 

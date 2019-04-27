@@ -10,8 +10,7 @@ import { Image } from './image';
 })
 export class ImageService {
   images: Image[] = []; 
-
-
+  
   // URL
   httpUrl: string = "https://picsum.photos/v2/list?page=1&limit=6";
 
@@ -25,6 +24,18 @@ export class ImageService {
         return of({data: []});
       }),
       map( res => res as Image[] ) 
-    );
+    )
   }  
+
+  // getAllImages() {
+  //   const obs: Observable<Image[]> = this.getImages();
+  //   obs.subscribe(
+  //     (imgs: Image[]) => this.images = imgs
+  //   );
+  // }
+
+
+  addImage(newImage: Image){
+    this.images.push(newImage);
+  }
 }
