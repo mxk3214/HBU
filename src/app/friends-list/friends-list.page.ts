@@ -25,4 +25,9 @@ export class FriendsListPage implements OnInit {
     );
   }
 
+  remove(item){
+    var index = this.profiles.indexOf(item);
+    this.profiles.splice(index);
+  }
+
 }
