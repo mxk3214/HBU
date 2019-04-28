@@ -11,7 +11,7 @@ import { Image } from './image';
 export class ImageService {
   images: Image[] = []; 
   
-  // URL
+  // URL to API
   httpUrl: string = "https://picsum.photos/v2/list?page=1&limit=6";
 
   constructor(private http : HttpClient) {}
@@ -23,17 +23,13 @@ export class ImageService {
         console.error(err);
         return of({data: []});
       }),
-      map( res => res as Image[] ) 
+
+      //map( res => res as Image[])  //OLD Way
+
+      // NEW way of observable array of images
+      map( res => res as Observable<Image>[])
     )
   }  
-
-  // getAllImages() {
-  //   const obs: Observable<Image[]> = this.getImages();
-  //   obs.subscribe(
-  //     (imgs: Image[]) => this.images = imgs
-  //   );
-  // }
-
 
   addImage(newImage: Image){
     this.images.push(newImage);

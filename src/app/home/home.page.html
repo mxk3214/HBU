@@ -1,5 +1,5 @@
 <ion-content>
-  <ion-card *ngFor="let image of images"> 
+  <ion-card *ngFor="let image of images | async"> 
     <ion-card-header>
       <ion-segment>
         <ion-icon name="contact" size="large"></ion-icon>

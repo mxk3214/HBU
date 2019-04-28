@@ -2,9 +2,6 @@ import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { OnInit } from "@angular/core";
 
-import { ProfileService } from '../profile.service';
-import { Profile } from '../profile';
-
 import { ImageService } from '../image.service';
 import { Image } from '../image';
 
@@ -19,6 +16,8 @@ export class HomePage implements OnInit{
 
   images: Image[] = [];
   
+  imageStore: Observable<Image>[] = [];
+  
 
   constructor(private imageService: ImageService){}
 
@@ -27,19 +26,20 @@ export class HomePage implements OnInit{
   } 
 
   async getAllImages() {
-    const obs: Observable<Image[]>  = await this.imageService.getImages();
-    obs.subscribe(
-      (imgs: Image[]) => this.images = imgs
+    // Initial way that worked with only an observable of images
+    // const obs: Observable<Image[]>  = await this.imageService.getImages();
+    // obs.subscribe(
+    //   (imgs: Image[]) => this.images = imgs
+    // );
+
+    // Attempted new way
+    // NOW an Observable array of images
+    const obs: Observable<Image>[]  = await this.imageService.getImages(); 
+    // Won't work bc need to subscribe the the array of observables to get the images
+    obs.subscribe( 
+        (imgs: Observable<Image>[]) => this.imageStore = imgs
     );
   }
-
-
-  // async getProfile() {
-  //   const obs: Observable<Profile[]> = await this.profileService.getProfiles();
-  //   obs.subscribe(
-  //     (prof: Profile[]) => this.profiles = prof
-  //   );
-  // }
 
   
   // Might remove...
